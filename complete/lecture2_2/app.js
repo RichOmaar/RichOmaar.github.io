@@ -23,7 +23,9 @@ class App{
 		this.renderer.setPixelRatio( window.devicePixelRatio );
 		this.renderer.setSize( window.innerWidth, window.innerHeight );
 		container.appendChild( this.renderer.domElement );
-		
+        
+        this.renderer.setAnimationLoop(this.render.bind(this));
+
         const geometry = new THREE.BoxBufferGeometry();
         const material = new THREE.MeshStandardMaterial( { color: 0xFF0000 });
 
@@ -32,9 +34,7 @@ class App{
         this.scene.add(this.mesh);
         
         const controls = new OrbitControls( this.camera, this.renderer.domElement );
-        
-        this.renderer.setAnimationLoop(this.render.bind(this));
-    
+            
         window.addEventListener('resize', this.resize.bind(this) );
 	}	
     
