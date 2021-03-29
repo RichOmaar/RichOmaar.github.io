@@ -7,7 +7,7 @@ class controladorPlantilla{
     }
 
     public static function ruta(){
-        return 'http://localhost:8888/GitHub/RichOmaar.github.io/';
+        return 'https://richomaar.github.io//';
     }
 }
 
